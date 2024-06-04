@@ -1,0 +1,51 @@
+{% extends 'services/base.html' %}
+{%load static%}
+
+{% block css %}
+    <link href="{% static 'vendor/css/profile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section class="d-flex justify-content-center">
+    <div class="container">
+        <div class="py-5 text-center">
+                <h1>Акции</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-6">
+                <figure class="item" align="center">
+                        <img src="/media/stock_images/stock_1.png" width="350" height="350">
+                        <div></div>
+                        <figcaption style ="margin-top: 10px; font-weight: 500">Скидка 10% на первое посещение</figcaption>
+                </figure>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <figure class="item" align="center">
+                        <img src="/media/stock_images/stock_2.png" width="350" height="350">
+                        <div></div>
+                        <figcaption style ="margin-top: 10px; font-weight: 500">Подбор средств к любой процедуре бесплатно!</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-dark fixed-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <a href="https://2gis.ru/krasnodar/firm/70000001056334207" class="text-light">
+                    <i class="fas fa-map-marker-alt"></i> Адрес: Краснодар, Брюсова 2, 2 этаж, салон Elle bien
+                </a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="https://t.me/kristinakrd" class="text-light">
+                    <i class="fab fa-telegram"></i> Телефон: +7 952 875 1995
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'services/base.html' %}
+
+{% block content %}
+  <section>
+    <div class="container pt-5">
+        <div class="text-center mt-5">
+            <h1>Записи</h1>
+            <div class="orders mt-5">
+                <table class="table">
+                    <thead>
+                    <tr class="table-light">
+                        <th scope="col">#</th>
+                        <th scope="col">Статус</th>
+                        <th scope="col">Дата</th>
+                        <th scope="col">Время</th>
+                        <th scope="col">Итого</th>
+                        <th scope="col">Действие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <th scope="row">{{order.id}}</th>
+                            <td>{{order.get_status_display}}</td>
+                            <td>{{order.date}}</td>
+                            <td>{{order.time}}</td>
+                            <td>{{order.basket_history.total_sum}} руб.</td>
+                            <td>
+                                <a href="{% url 'procedures:order' order.id %}">просмотреть</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

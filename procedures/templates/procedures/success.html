@@ -1,0 +1,32 @@
+{% extends 'services/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'vendor/css/auth.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <body class="bg-primary">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container" style = "margin-top: 45px">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5" >
+                                <div class="card-header" >
+                                    <h2 class="text-center font-weight-light my-4" style="font-weight: 1000">Спасибо!</h2>
+                                    <h6 style="font-weight: 400; text-align: center">Данные успешно отправлены. Вы можете отследить в личном кабинете, когда ваша запись будет подтверждена!</h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a style="color:#714B49" href="{% url 'procedures:orders_list' %}">перейти к записям</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </body>
+{% endblock %}

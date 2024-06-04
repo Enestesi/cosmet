@@ -1,0 +1,55 @@
+{% extends 'services/base.html' %}
+{%load static%}
+
+{% block css %}
+    <link href="{% static 'vendor/css/photo.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="d-flex flex-column h-100 justify-content-end">
+            <div style="margin-top: 100px;">
+                <div class="title mt-10">
+                    <div class="container">
+                        <h1 class="title__text" align="center">
+                            Фотографии до и после процедур
+                        </h1>
+                    </div>
+                </div>
+                <div class="results pt-5">
+                    <div class="row" id="cont_foto">
+                        {% for photo in PhotoDoPosle %}
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <figure class="item" align="center">
+                                        <img src="{{ photo.image.url }}" width="350" height="350">
+                                        <div></div>
+                                        <figcaption style ="margin-top: 10px; font-weight: 500" > {{ photo.name }} </figcaption>
+                                </figure>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-3 bg-dark">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <a href="https://2gis.ru/krasnodar/firm/70000001056334207" class="text-light">
+                    <i class="fas fa-map-marker-alt"></i> Адрес: Краснодар, Брюсова 2, 2 этаж, салон Elle bien
+                </a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="https://t.me/kristinakrd" class="text-light">
+                    <i class="fab fa-telegram"></i> Телефон: +7 952 875 1995
+                </a>
+            </div>
+        </div>
+      </div>
+    <!-- /.container -->
+</footer>
+{% endblock %}

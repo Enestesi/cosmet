@@ -1,0 +1,36 @@
+{% extends 'services/base.html' %}
+
+{% block content %}
+    <section>
+    <div class="container pt-5">
+        <div class="text-center mt-5">
+            <h1>Запись №{{id}}</h1>
+            <div class="orders mt-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Кол-во</th>
+                        <th scope="col">Цена</th>
+                        <th scope="col">Сумма</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for orders_items in services.orders_items %}
+                        <tr>
+                            <th scope="row">
+                                {{orders_items.service_name}}
+                            </th>
+                            <td>{{orders_items.quantity}}</td>
+                            <td>{{orders_items.price}} руб.</td>
+                            <td>{{orders_items.sum}} руб.</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <p class="float-right h4 mt-3">Итого {{services.total_sum}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

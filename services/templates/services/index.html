@@ -1,0 +1,49 @@
+{% extends 'services/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'vendor/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section class="d-flex flex-column h-100 justify-content-end">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="mt-5">Косметолог-эстетист</h1>
+                <ul id="my-list" type = "circle">
+                      <li> Сделала больше 1000 процедур</li>
+                      <li> Постоянно прохожу обучения</li>
+                      <li> Черный пояс по подбору качественного домашнего ухода</li>
+                      <li> Учу быть красивой и любить себя без инъекций</li>
+                      <li> Фанат эстетической косметологии и любви к себе</li>
+                </ul>
+                <button id="start-purchase-btn" type="button" class="btn btn-lg">
+                    <a id="start-purchase-link" href="{% url 'services:index' %}">
+                        Записаться
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-dark fixed-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <a href="https://2gis.ru/krasnodar/firm/70000001056334207" class="text-light">
+                    <i class="fas fa-map-marker-alt"></i> Адрес: Краснодар, Брюсова 2, 2 этаж, салон Elle bien
+                </a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="https://t.me/kristinakrd" class="text-light">
+                    <i class="fab fa-telegram"></i> Телефон: +7 952 875 1995
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
